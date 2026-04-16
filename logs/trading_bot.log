@@ -1,0 +1,34 @@
+2026-04-16 22:12:10,117 | DEBUG    | bot.cli                   | CLI started with command: ping
+2026-04-16 22:12:51,571 | DEBUG    | bot.client                | BinanceClient initialised (testnet: https://testnet.binancefuture.com)
+2026-04-16 22:12:51,572 | DEBUG    | bot.client                | → GET /fapi/v1/ping | params={}
+2026-04-16 22:12:51,580 | DEBUG    | urllib3.connectionpool    | Starting new HTTPS connection (1): testnet.binancefuture.com:443
+2026-04-16 22:12:52,315 | DEBUG    | urllib3.connectionpool    | https://testnet.binancefuture.com:443 "GET /fapi/v1/ping HTTP/1.1" 200 2
+2026-04-16 22:12:52,316 | DEBUG    | bot.client                | ← GET /fapi/v1/ping | status=200 | body={}
+2026-04-16 22:12:52,316 | INFO     | bot.client                | Ping successful — testnet is reachable.
+2026-04-16 22:12:58,715 | DEBUG    | bot.cli                   | CLI started with command: ping
+2026-04-16 22:13:29,171 | DEBUG    | bot.client                | BinanceClient initialised (testnet: https://testnet.binancefuture.com)
+2026-04-16 22:13:29,171 | DEBUG    | bot.client                | → GET /fapi/v1/ping | params={}
+2026-04-16 22:13:29,173 | DEBUG    | urllib3.connectionpool    | Starting new HTTPS connection (1): testnet.binancefuture.com:443
+2026-04-16 22:13:29,590 | DEBUG    | urllib3.connectionpool    | https://testnet.binancefuture.com:443 "GET /fapi/v1/ping HTTP/1.1" 200 2
+2026-04-16 22:13:29,590 | DEBUG    | bot.client                | ← GET /fapi/v1/ping | status=200 | body={}
+2026-04-16 22:13:29,591 | INFO     | bot.client                | Ping successful — testnet is reachable.
+2026-04-16 22:19:44,594 | DEBUG    | bot.cli                   | CLI started with command: ping
+2026-04-16 22:19:44,595 | DEBUG    | bot.client                | BinanceClient initialised (testnet: https://testnet.binancefuture.com)
+2026-04-16 22:19:44,595 | DEBUG    | bot.client                | → GET /fapi/v1/ping | params={}
+2026-04-16 22:19:44,597 | DEBUG    | urllib3.connectionpool    | Starting new HTTPS connection (1): testnet.binancefuture.com:443
+2026-04-16 22:19:44,918 | DEBUG    | urllib3.connectionpool    | https://testnet.binancefuture.com:443 "GET /fapi/v1/ping HTTP/1.1" 200 2
+2026-04-16 22:19:44,920 | DEBUG    | bot.client                | ← GET /fapi/v1/ping | status=200 | body={}
+2026-04-16 22:19:44,920 | INFO     | bot.client                | Ping successful — testnet is reachable.
+2026-04-16 22:19:52,680 | DEBUG    | bot.cli                   | CLI started with command: place
+2026-04-16 22:19:52,681 | DEBUG    | bot.client                | BinanceClient initialised (testnet: https://testnet.binancefuture.com)
+2026-04-16 22:19:52,681 | INFO     | bot.orders                | Order requested — symbol=BTCUSDT side=BUY type=MARKET qty=0.001 price=None
+2026-04-16 22:19:52,684 | INFO     | bot.client                | Placing order: {'symbol': 'BTCUSDT', 'side': 'BUY', 'type': 'MARKET', 'quantity': '0.001'}
+2026-04-16 22:19:52,684 | DEBUG    | bot.client                | → POST /fapi/v1/order | params={'symbol': 'BTCUSDT', 'side': 'BUY', 'type': 'MARKET', 'quantity': '0.001', 'timestamp': 1776358192684, 'recvWindow': 5000}
+2026-04-16 22:19:52,686 | DEBUG    | urllib3.connectionpool    | Starting new HTTPS connection (1): testnet.binancefuture.com:443
+2026-04-16 22:19:53,070 | DEBUG    | urllib3.connectionpool    | https://testnet.binancefuture.com:443 "POST /fapi/v1/order HTTP/1.1" 401 69
+2026-04-16 22:19:53,070 | DEBUG    | bot.client                | ← POST /fapi/v1/order | status=401 | body={"code":-2015,"msg":"Invalid API-key, IP, or permissions for action"}
+2026-04-16 22:19:53,072 | ERROR    | bot.client                | Binance API error -2015: Invalid API-key, IP, or permissions for action
+2026-04-16 22:19:53,072 | ERROR    | bot.orders                | Order failed — Binance API error: [-2015] Invalid API-key, IP, or permissions for action
+2026-04-16 22:19:53,072 | ERROR    | bot.cli                   | place command failed: [-2015] Invalid API-key, IP, or permissions for action
+2026-04-16 22:20:15,735 | DEBUG    | bot.cli                   | CLI started with command: menu
+2026-04-16 22:20:15,736 | DEBUG    | bot.client                | BinanceClient initialised (testnet: https://testnet.binancefuture.com)
