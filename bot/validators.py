@@ -1,10 +1,3 @@
-"""
-Input validation for trading parameters.
-
-All validators raise ValueError with a human-readable message on failure
-and return the cleaned / normalised value on success.
-"""
-
 from __future__ import annotations
 
 from decimal import Decimal, InvalidOperation

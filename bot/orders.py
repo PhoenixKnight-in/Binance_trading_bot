@@ -93,27 +93,6 @@ def place_order(
     stop_price: Optional[str | float] = None,
     time_in_force: Optional[str] = None,
 ) -> dict:
-    """
-    Validate, log, and place a single order.
-
-    Args:
-        client:        Authenticated BinanceClient instance.
-        symbol:        e.g. "BTCUSDT"
-        side:          "BUY" or "SELL"
-        order_type:    "MARKET", "LIMIT", "STOP", or "STOP_MARKET"
-        quantity:      Order quantity.
-        price:         Limit price (required for LIMIT / STOP).
-        stop_price:    Stop trigger price (required for STOP / STOP_MARKET).
-        time_in_force: "GTC" | "IOC" | "FOK" | "GTX" (default GTC for LIMIT).
-
-    Returns:
-        Raw Binance response dict.
-
-    Raises:
-        ValueError:          On invalid input.
-        BinanceAPIError:     On Binance error responses.
-        BinanceNetworkError: On network failures.
-    """
     logger.info(
         "Order requested — symbol=%s side=%s type=%s qty=%s price=%s",
         symbol, side, order_type, quantity, price,

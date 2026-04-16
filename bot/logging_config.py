@@ -1,8 +1,3 @@
-"""
-Logging configuration for TradingBot.
-Writes structured logs to file + human-readable output to console.
-"""
-
 import logging
 import logging.handlers
 import os
@@ -21,12 +16,7 @@ CONSOLE_FORMAT = "%(levelname)-8s %(message)s"
 
 
 def setup_logging(verbose: bool = False) -> None:
-    """
-    Call once at application start-up.
 
-    Args:
-        verbose: If True, console handler also shows DEBUG messages.
-    """
     LOG_DIR.mkdir(parents=True, exist_ok=True)
 
     root = logging.getLogger()

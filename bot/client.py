@@ -1,14 +1,3 @@
-"""
-BinanceClient — thin wrapper around Binance Futures Testnet REST API.
-
-Responsibilities
-────────────────
-* Sign every private request with HMAC-SHA256.
-* Log every outgoing request and incoming response at DEBUG level.
-* Translate HTTP / JSON errors into typed exceptions.
-* Expose only the surface the rest of the bot actually needs.
-"""
-
 import hashlib
 import hmac
 import time
@@ -21,13 +10,11 @@ from bot.logging_config import get_logger
 
 logger = get_logger("bot.client")
 
-# ── Constants ─────────────────────────────────────────────────────────────────
 
 BASE_URL = "https://testnet.binancefuture.com"
 RECV_WINDOW = 5_000          # milliseconds Binance will accept the request within
 
 
-# ── Custom exceptions ─────────────────────────────────────────────────────────
 
 class BinanceAPIError(Exception):
     """Raised when Binance returns a non-2xx response or an error payload."""
@@ -85,22 +72,7 @@ class BinanceClient:
         params: dict | None = None,
         signed: bool = True,
     ) -> Any:
-        """
-        Execute an HTTP request.
-
-        Args:
-            method: "GET" | "POST" | "DELETE"
-            path:   API path, e.g. "/fapi/v1/order"
-            params: Query / body parameters.
-            signed: Whether to attach timestamp + signature.
-
-        Returns:
-            Parsed JSON response (dict or list).
-
-        Raises:
-            BinanceAPIError:     Binance returned an error payload.
-            BinanceNetworkError: Network-level failure.
-        """
+        
         params = params or {}
 
         if signed:

@@ -37,10 +37,15 @@ logger = get_logger("bot.cli")
 # ── Credential helpers ────────────────────────────────────────────────────────
 
 def get_credentials(args: argparse.Namespace) -> tuple[str, str]:
-    # Binance Testnet Credentials
-    BINANCE_API_KEY = os.getenv("BINANCE_API_KEY")
-    BINANCE_API_SECRET = os.getenv("BINANCE_API_SECRET")
-    return BINANCE_API_KEY,BINANCE_API_SECRET
+    api_key = os.getenv("BINANCE_API_KEY")
+    api_secret = os.getenv("BINANCE_API_SECRET")
+    print("KEY:", api_key[:10])
+    print("SECRET:", api_secret[:10])
+
+    if not api_key or not api_secret:
+        raise ValueError("BINANCE_API_KEY or BINANCE_API_SECRET not found in environment")
+
+    return api_key.strip(), api_secret.strip()
 
 def build_client(args: argparse.Namespace) -> BinanceClient:
     key, secret = get_credentials(args)
